@@ -1,0 +1,305 @@
+# Workbench 3.1
+# Version: 0.2
+# Author: tastymagma
+# Email: tastymagma@vmail.me
+# Last change: 2015-6-9
+
+
+$FONT = "-*-terminal-bold-r-*-*-14-*-*-*-*-*-*-*#Left"
+$FONT_TITLE = "-*-terminal-medium-r-*-*-14-*-*-*-*-*-*-*#Left"
+
+## AMIGA FONTS
+# You can find original Workbench fonts for X under:
+# http://umlautllama.com/projects/font/
+#
+# But I had to convert them using trbdf to iso-8859-1 for pekwm to accept them
+
+#$FONT = "-commodore-topaz2 normal-medium-r-normal--8--*-*-*-*-*-*"
+#$FONT_TITLE = "-commodore-topaz2 normal-medium-r-normal-*-8-*-*-*-*-*-*-*"
+
+
+# Personal Setup
+#$FONT = "-commodore-topaz2 normal-medium-r-normal--8--*-*-*-*-iso8859-1"
+#$FONT_TITLE = "-*-gohufont-medium-r-*-*-11-*-*-*-*-*-*-1#Left"
+
+$FCOL = "Solid #3b67a2"
+$UCOL = "Solid #959595"
+
+
+Require {
+	Templates = "True"
+}
+
+Define = "BaseDecor" {
+	Height = "14"
+	
+	# Increase first number to bring title text downwards
+	Pad = "-7 5 5 0"
+	
+	Focused = "Image title-focus.png"
+	Unfocused = "Image title-unfocus.png"
+	
+	Tab {
+		Focused = "Image title-focus.png"
+		FocusedSelected = "Image title-focus.png"
+		Unfocused = "Image title-unfocus.png"
+		UnfocusedSelected = "Image title-unfocus.png"
+	}
+	Separator {
+		Focused = "Image separator.png"
+		Unfocused = "Image separator.png"
+	}
+	Font {
+		Focused = "$FONT_TITLE"
+	}
+	FontColor {
+		Focused = "#999999"
+		FocusedSelected = "#000000"
+		Unfocused = "#000000"
+		UnfocusedSelected = "#000000"
+	}
+	Border {
+		Focused {
+			TopLeft = "Empty"
+			TopRight = "Empty"
+			Top = "Empty"
+			 
+			Left =  "Image border-vert-focus.png"
+			Right = "Image border-vert-focus.png"
+			Bottom = "Image border-bottom.png"
+			BottomLeft = "Image border-bottom-left-focus.png"
+			BottomRight = "Image border-bottom-right-focus.png"
+		}
+		Unfocused {
+			TopLeft = "Empty"
+			TopRight = "Empty"
+			Top = "Empty"
+			
+			Left =  "Image border-vert-unfocus.png"
+			Right = "Image border-vert-unfocus.png"
+			Bottom = "Image border-bottom.png"
+			BottomLeft = "Image border-bottom-left-unfocus.png"
+			BottomRight = "Image border-bottom-right-unfocus.png"
+		}
+	}
+}
+
+Define = "BaseButtons" {
+	Buttons {
+		Left = "Close" {
+			Focused = "Image button-close-focus.png"
+			Unfocused = "Image button-close-unfocus.png"
+			#Hoover = "Image button_hover.png"
+			Pressed = "Image button-close-focus-pressed.png"
+			Button = "1" { Actions = "Close" }
+			Button = "3" { Actions = "Kill" }
+		}
+		
+		Right = "Raise" {
+		    Focused = "Image button-stack-focus.png"
+		    Unfocused = "Image button-stack-unfocus.png"
+		    #Hoover = "Image button_hover.png"
+		    Pressed = "Image button-stack-focus-pressed.png"
+		    Button = "1" { Actions = "Toggle Shaded" } # no toggleble raise?
+		}
+		
+		Right = "Maximize" {
+			Focused = "Image button-maximize-focus.png"
+			Unfocused = "Image button-maximize-unfocus.png"
+			#Hoover = "Image button_hover.png"
+			Pressed = "Image button-maximize-focus-pressed.png"
+			Button = "1" { Actions = "Toggle Maximized 1 1" }
+		}
+		
+		Right = "Iconify" {
+			Focused = "Image button-iconify-focus.png"
+			Unfocused = "Image button-iconify-unfocus.png"
+			#Hoover = "Image button_hover.png"
+			Pressed = "Image button-iconify-focus-pressed.png"
+			Button = "1" { Actions = "Set Iconified" }
+		}
+	}
+}
+
+Define = "EmptyDecor" {
+	Focused = "Empty"
+	Unfocused = "Empty"
+	
+	Tab {
+		Focused = "Empty"
+		FocusedSelected = "Empty"
+		Unfocused = "Empty"
+		UnfocusedSelected = "Empty"
+	}
+	
+	Separator {
+		Focused = "Empty"
+		Unfocused = "Empty"
+	}
+	
+	Font {
+		Focused = "Empty"
+	}
+	
+	FontColor {
+		Focused = "Empty"
+		FocusedSelected = "Empty"
+		Unfocused = "Empty"
+		UnfocusedSelected = "Empty"
+	}    
+	
+	Border {
+		Focused {
+			TopLeft = "Empty"
+			Top = "Empty"
+			TopRight = "Empty"
+			Left =  "Empty"
+			Right = "Empty"
+			BottomLeft = "Empty"
+			Bottom = "Empty"
+			BottomRight = "Empty"
+		}
+		Unfocused {
+			TopLeft = "Empty"
+			Top = "Empty"
+			TopRight = "Empty"
+			Left =  "Empty"
+			Right = "Empty"
+			BottomLeft = "Empty"
+			Bottom = "Empty"
+			BottomRight = "Empty"
+		}
+	}
+}
+
+Define = "MenuDecor" {
+	Pad = "-8 5 5 8"
+	WidthMin = "40"
+	
+	Focused = "Solid #000000"
+	Unfocused = "Solid #000000"
+
+	Tab {
+		Focused =  "Solid #000000"
+		FocusedSelected =  "Solid #000000"
+		Unfocused = "Solid #000000"
+		UnfocusedSelected = "Solid #000000"
+	}
+	Font {
+		Focused = "$FONT"
+	}
+	FontColor {
+		Focused = "#ffffff"
+		FocusedSelected = "#ffffff"
+		Unfocused = "#ffffff"
+		UnfocusedSelected = "#ffffff"
+	}
+	Border {
+		Focused {
+			Top = "Solid #000000 1x1"
+			Left = "Solid #000000 1x1"
+			Right = "Solid #000000 1x1"
+			Bottom = "Solid #000000 1x1"
+			BottomLeft = "Solid #000000 1x1"
+		}
+		Unfocused {
+			Top = "Solid #000000 1x1"
+			Left = "Solid #000000 1x1"
+			Right = "Solid #000000 1x1"
+			Bottom = "Solid #000000 1x1"
+			BottomLeft = "Solid #000000 1x1"
+		}
+	}
+}
+
+
+PDecor {
+  Decor = "Default" {
+    Title {
+      @BaseDecor
+      @BaseButtons
+    }
+  }
+
+	Decor = "Menu" {
+		Title {
+			@BaseDecor
+			@MenuDecor
+		}
+	}
+
+  Decor = "Titlebarless" {
+    Title {
+      @EmptyDecor
+    }
+  }
+
+  Decor = "Statuswindow" {
+    Title {
+      @EmptyDecor
+    }
+  }
+
+	Decor = "WORKSPACEINDICATOR" {
+		Title {
+			@BaseDecor
+			@MenuDecor
+		}
+	}
+}
+
+Harbour {
+	Texture = "Solid #f9f9f9"
+}
+
+Menu {
+	Pad = "-3 3 5 5" 
+	
+	Focused {
+		Font = "$FONT"
+		Background = "Solid #ffffff"
+		Item = "Solid #ffffff"
+		Text = "#00000" 
+		Separator = "Image menuline.png"
+		Arrow = "Image arrow.png"
+	}
+	Unfocused {
+		Font = "$FONT"
+		Background = "Solid #ffffff"
+		Item = "Solid #ffffff"
+		Text = "#000000"
+		Separator = "Image menuline.png"
+		Arrow = "Image arrow.png"
+	}
+	Selected {
+		Font = "$FONT"
+		Background = "Solid #ffffff"
+		Item = "Solid #000000"
+		Text = "#ffffff"
+		Arrow = "Image arrow-focus.png"
+	}
+}
+
+CmdDialog {
+	Font = "$FONT"
+	Texture = "Solid #ffffff"
+	Text = "#000000"
+	Pad = "-3 3 5 5"
+}
+
+Status {
+	Pad = "-5 5 5 5"
+	Font = "$FONT"
+	Texture = "Solid #000000"
+	Text = "#ffffff"
+}
+
+WorkspaceIndicator {
+	Font = "$FONT#Center"
+	Text = "#000000"
+	
+	WorkspacePadding = "1 0 1 1"
+	EdgePadding = "3 0 3 3"
+	Workspace = "$UCOL"
+	WorkspaceActive = "$FCOL"
+}
